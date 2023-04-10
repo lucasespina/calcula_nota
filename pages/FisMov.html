@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Exemplo</title>
-	<style>
-
-		.container {
-			width: 50%;
-			display: block;
-			overflow: hidden;
-      margin: 0 auto;
-		}
-		
-		.coluna-esquerda {
-			float: left;
-			width: 30%;
-			box-sizing: border-box;
-			padding: 10px;
-		}
-		
-		.coluna-direita {
-			float: right;
-			width: 70%;
-			box-sizing: border-box;
-			padding: 10px;
-		}
-		
-		.coluna-direita .coluna {
-			float: left;
-			width: 50%;
-			box-sizing: border-box;
-			padding-right: 10px;
-		}
-		
-		input {
-			display: block;
-			margin-bottom: 5px;
-			width: 100%;
-			box-sizing: border-box;
-			padding: 5px;
-		}
-
-	</style>
+	<title>Acionamentos Eletricos - Insper</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/Fismov.css">
+	<script type="text/javascript" src="../js/fismov.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="coluna-esquerda">
-			<input type="text" name="input1">
-			<input type="text" name="input2">
-			<input type="text" name="input3">
-			<input type="text" name="input4">
-		</div>
-		<div class="coluna-direita">
+	<header>
+
+
+            <button onclick="window.history.back()" class="back-button"></button>
+
+
+		<h1>Física do Movimento</h1>
+
+	</header>
+	<main>
+		<form>
+
+
 			<div class="coluna">
-				<input type="text" name="input5">
-				<input type="text" name="input6">
-				<input type="text" name="input7">
-				<input type="text" name="input8">
-				<input type="text" name="input9">
-				<input type="text" name="input10">
-				<input type="text" name="input11">
-				<input type="text" name="input12">
+				<h2>Provas</h2>
+				<label>AI: 
+					<input type="number" id ="AI"><br>
+				</label>
+				<label>PI: <input type="number" id="PI"></label>
+				<label>AI2: <input type="number" id="AI2"></label>
+				<label>PF: <input type="number" id="PF"></label>
 			</div>
 			<div class="coluna">
-				<input type="text" name="input13">
-				<input type="text" name="input14">
-				<input type="text" name="input15">
-				<input type="text" name="input16">
-				<input type="text" name="input17">
-				<input type="text" name="input18">
-				<input type="text" name="input19">
-				<input type="text" name="input20">
+				<h2> APS </h2>
+
+				<label>APS 1: <input type="number" id="aps1"></label>
+				<label>APS 2: <input type="number" id="aps2"></label>
+				<label>APS 3: <input type="number" id="aps3"></label>
+				<label>APS 4: <input type="number" id="aps4"></label>
+				<label>APS 5: <input type="number" id="aps5"></label>
+				<label>APS 6: <input type="number" id="aps6"></label>
+				<label>APS 7: <input type="number" id="aps7"></label>
+				<label>APS 8: <input type="number" id="aps8"></label>
+				<label>APS 9: <input type="number" id="aps9"></label>
+				<label>APS 10: <input type="number" id="aps10"></label>
 			</div>
-		</div>
-	</div>
+			<div class="coluna">
+
+				<label>Quiz 1: <input type="number" id="quiz1"></label>
+				<label>Quiz 2: <input type="number" id="quiz2"></label>
+				<label>Quiz 3: <input type="number" id="quiz3"></label>
+				<label>Quiz 4: <input type="number" id="quiz4"></label>
+				<label>Quiz 5: <input type="number" id="quiz5"></label>
+				<label>Quiz 6: <input type="number" id="quiz6"></label>
+				<label>Quiz 7: <input type="number" id="quiz7"></label>
+				<label>Quiz 8: <input type="number" id="quiz8"></label>
+				<label>Quiz 9: <input type="number" id="quiz9"></label>
+				<label>Quiz 10: <input type="number" id="quiz10"></label>
+				<label>Quiz 11: <input type="number" id="quiz11"></label>
+				<label>Quiz 12: <input type="number" id="quiz12"></label>
+				<label>Quiz 13: <input type="number" id="quiz13"></label>
+				<label>Quiz 14: <input type="number" id="quiz14"></label>
+				<label>Quiz 15: <input type="number" id="quiz15"></label>
+				<label>Quiz 16: <input type="number" id="quiz16"></label>
+
+		</form>
+
+
+        <div class="resultado">
+
+            <h2>Nota:</h2>
+            <p id="nota-final"></p>
+          </div>
+
+          <span id="span"></span>
+
+
+    
+
+	</main>
+
+    <script type="text/javascript" src="../js/fismov.js"></script>
+
 </body>
 </html>
