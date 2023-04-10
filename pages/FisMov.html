@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo</title>
+	<style>
+
+		.container {
+			width: 50%;
+			display: block;
+			overflow: hidden;
+      margin: 0 auto;
+		}
+		
+		.coluna-esquerda {
+			float: left;
+			width: 30%;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		
+		.coluna-direita {
+			float: right;
+			width: 70%;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		
+		.coluna-direita .coluna {
+			float: left;
+			width: 50%;
+			box-sizing: border-box;
+			padding-right: 10px;
+		}
+		
+		input {
+			display: block;
+			margin-bottom: 5px;
+			width: 100%;
+			box-sizing: border-box;
+			padding: 5px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="coluna-esquerda">
+			<input type="text" name="input1">
+			<input type="text" name="input2">
+			<input type="text" name="input3">
+			<input type="text" name="input4">
+		</div>
+		<div class="coluna-direita">
+			<div class="coluna">
+				<input type="text" name="input5">
+				<input type="text" name="input6">
+				<input type="text" name="input7">
+				<input type="text" name="input8">
+				<input type="text" name="input9">
+				<input type="text" name="input10">
+				<input type="text" name="input11">
+				<input type="text" name="input12">
+			</div>
+			<div class="coluna">
+				<input type="text" name="input13">
+				<input type="text" name="input14">
+				<input type="text" name="input15">
+				<input type="text" name="input16">
+				<input type="text" name="input17">
+				<input type="text" name="input18">
+				<input type="text" name="input19">
+				<input type="text" name="input20">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
