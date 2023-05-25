@@ -13,6 +13,26 @@ window.onload = function() {
     input3.addEventListener("input", calcularResultado);
     input4.addEventListener("input", calcularResultado);
     input6.addEventListener("input", calcularResultado);
+
+    initValues();
+
+    function initValues() {
+        if(localStorage.getItem('pi')) {
+            input1.value = localStorage.getItem('pi');
+        } 
+        if(localStorage.getItem('pf')) {
+            input2.value = localStorage.getItem('pf');
+        }
+        if(localStorage.getItem('lista1')) {  
+            input3.value = localStorage.getItem('lista1');
+        }
+        if(localStorage.getItem('lista2')) {  
+            input4.value = localStorage.getItem('lista2');
+        }
+        if(localStorage.getItem('lista4')) {
+            input6.value = localStorage.getItem('lista4');
+        }
+      }
     
     function calcularResultado() {
 
@@ -66,6 +86,13 @@ window.onload = function() {
 
     }
 
+    localStorage.setItem('pi', input1.value);
+    localStorage.setItem('pf', input2.value);
+    localStorage.setItem('lista1', input3.value);
+    localStorage.setItem('lista2', input4.value);
+    localStorage.setItem('lista4', input6.value);
+
+
     }
 
     function calcularResultado2(resultadoAtualizado) {
@@ -80,6 +107,8 @@ window.onload = function() {
 
 
   }
+
+  calcularResultado();
 
   }
 
