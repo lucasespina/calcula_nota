@@ -32,10 +32,6 @@ window.onload = function() {
     var aps4 = document.getElementById("aps4")
     var aps5 = document.getElementById("aps5")
     var aps6 = document.getElementById("aps6")
-    var aps7 = document.getElementById("aps7")
-    var aps8 = document.getElementById("aps8")
-    var aps9 = document.getElementById("aps9")
-    var aps10 = document.getElementById("aps10")
 
     var resultado = document.getElementById("nota-final")
     
@@ -67,10 +63,93 @@ window.onload = function() {
     aps4.addEventListener("input", calcularResultado);
     aps5.addEventListener("input", calcularResultado);
     aps6.addEventListener("input", calcularResultado);
-    aps7.addEventListener("input", calcularResultado);
-    aps8.addEventListener("input", calcularResultado);
-    aps9.addEventListener("input", calcularResultado);
-    aps10.addEventListener("input", calcularResultado);
+
+
+    initValues();
+
+    function initValues() {
+        if(localStorage.getItem('AI')) {
+            input1.value = localStorage.getItem('AI');
+        }
+        if(localStorage.getItem('PI')) {
+            input2.value = localStorage.getItem('PI');
+        }
+        if(localStorage.getItem('AI2')) {
+            input3.value = localStorage.getItem('AI2');
+        }
+        if(localStorage.getItem('PF')) {
+            input4.value = localStorage.getItem('PF');
+        }
+
+        if(localStorage.getItem('quiz1')) {
+            quiz1.value = localStorage.getItem('quiz1');
+        }
+        if(localStorage.getItem('quiz2')) { 
+            quiz2.value = localStorage.getItem('quiz2');
+        } 
+        if(localStorage.getItem('quiz3')) {
+            quiz3.value = localStorage.getItem('quiz3');
+        }
+        if(localStorage.getItem('quiz4')) {
+            quiz4.value = localStorage.getItem('quiz4');
+        }
+        if(localStorage.getItem('quiz5')) {
+            quiz5.value = localStorage.getItem('quiz5');
+        }
+        if(localStorage.getItem('quiz6')) {
+            quiz6.value = localStorage.getItem('quiz6');
+        }
+        if(localStorage.getItem('quiz7')) {
+            quiz7.value = localStorage.getItem('quiz7');
+        }
+        if(localStorage.getItem('quiz8')) {
+            quiz8.value = localStorage.getItem('quiz8');
+        }
+        if(localStorage.getItem('quiz9')) {
+            quiz9.value = localStorage.getItem('quiz9');
+        }
+        if(localStorage.getItem('quiz10')) {
+            quiz10.value = localStorage.getItem('quiz10');
+        }
+        if(localStorage.getItem('quiz11')) {
+            quiz11.value = localStorage.getItem('quiz11');
+        }
+        if(localStorage.getItem('quiz12')) {
+            quiz12.value = localStorage.getItem('quiz12');
+        }
+        if(localStorage.getItem('quiz13')) {
+            quiz13.value = localStorage.getItem('quiz13');
+        }
+        if(localStorage.getItem('quiz14')) {
+            quiz14.value = localStorage.getItem('quiz14');
+        }
+        if(localStorage.getItem('quiz15')) {
+            quiz15.value = localStorage.getItem('quiz15');
+        }
+        if(localStorage.getItem('quiz16')) {
+            quiz16.value = localStorage.getItem('quiz16');
+        }
+
+        if(localStorage.getItem('aps1')) {
+            aps1.value = localStorage.getItem('aps1');
+        }
+        if(localStorage.getItem('aps2')) {  
+            aps2.value = localStorage.getItem('aps2');
+        }
+        if(localStorage.getItem('aps3')) {
+            aps3.value = localStorage.getItem('aps3');
+        }
+        if(localStorage.getItem('aps4')) {
+            aps4.value = localStorage.getItem('aps4');
+        }
+        if(localStorage.getItem('aps5')) {
+            aps5.value = localStorage.getItem('aps5');
+        }
+        if(localStorage.getItem('aps6')) {
+            aps6.value = localStorage.getItem('aps6');
+        }
+    }
+
 
 
     function calcularResultado() {
@@ -105,14 +184,11 @@ window.onload = function() {
         var aps4_c = parseFloat(aps4.value) || 0;
         var aps5_c = parseFloat(aps5.value) || 0;
         var aps6_c = parseFloat(aps6.value) || 0;
-        var aps7_c = parseFloat(aps7.value) || 0;
-        var aps8_c = parseFloat(aps8.value) || 0;
-        var aps9_c = parseFloat(aps9.value) || 0;
-        var aps10_c = parseFloat(aps10.value) || 0;
+  
         
         console.log(quiz1_c)
 
-        var resultadoAtualizado = (((ai*0.15) + (pi*0.3) + (ai2*0.15) + (pf * 0.3)) + ((quiz1_c + quiz2_c + quiz3_c + quiz4_c + quiz5_c + quiz6_c + quiz7_c + quiz8_c + quiz9_c + quiz10_c + quiz11_c + quiz12_c + quiz13_c + quiz14_c + quiz15_c + quiz16_c) * 0.00625) + ((aps1_c + aps2_c + aps3_c + aps4_c + aps5_c + aps6_c + aps7_c + aps8_c + aps9_c + aps10_c) *0.01))
+        var resultadoAtualizado = (((ai*0.15) + (pi*0.3) + (ai2*0.15) + (pf * 0.3)) + ((quiz1_c + quiz2_c + quiz3_c + quiz4_c + quiz5_c + quiz6_c + quiz7_c + quiz8_c + quiz9_c + quiz10_c + quiz11_c + quiz12_c + quiz13_c + quiz14_c + quiz15_c + quiz16_c) * 0.00625) + ((aps1_c + aps2_c + aps3_c + aps4_c + aps5_c + aps6_c ) *0.01))
         resultado.innerHTML = resultadoAtualizado.toFixed(2);
       
         if (resultadoAtualizado < 5) {
@@ -139,5 +215,32 @@ window.onload = function() {
         }
   
       }
+      localStorage.setItem('AI', input1.value);
+      localStorage.setItem('PI', input2.value);
+      localStorage.setItem('AI2', input3.value);
+      localStorage.setItem('PF', input4.value);
+      localStorage.setItem('quiz1', quiz1.value);
+      localStorage.setItem('quiz2', quiz2.value);
+      localStorage.setItem('quiz3', quiz3.value);
+      localStorage.setItem('quiz4', quiz4.value);
+      localStorage.setItem('quiz5', quiz5.value);
+      localStorage.setItem('quiz6', quiz6.value);
+      localStorage.setItem('quiz7', quiz7.value);
+      localStorage.setItem('quiz8', quiz8.value);
+      localStorage.setItem('quiz9', quiz9.value);
+      localStorage.setItem('quiz10', quiz10.value);
+      localStorage.setItem('quiz11', quiz11.value);
+      localStorage.setItem('quiz12', quiz12.value);
+      localStorage.setItem('quiz13', quiz13.value);
+      localStorage.setItem('quiz14', quiz14.value);
+      localStorage.setItem('quiz15', quiz15.value);
+      localStorage.setItem('quiz16', quiz16.value);
+      localStorage.setItem('aps1', aps1.value);
+      localStorage.setItem('aps2', aps2.value);
+      localStorage.setItem('aps3', aps3.value);
+      localStorage.setItem('aps4', aps4.value);
+      localStorage.setItem('aps5', aps5.value);
+      localStorage.setItem('aps6', aps6.value);
+      
     }
 }
