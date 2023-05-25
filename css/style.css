@@ -29,7 +29,7 @@ header {
     top: 0;
     left: 0;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
-    font-size: 36px;
+    font-size: 70px;
     text-shadow: black 0.10em 0.1em 0.2em;
     z-index: 1; /* Garante que o header fique acima de outros conteúdos */
 }
@@ -50,7 +50,7 @@ button {
     color: white;
     border: 1px solid black;
     border-radius: 30px;
-    font-size: 24px;
+    font-size: 50px;
     font-weight: 700;
     letter-spacing: 2px;
     cursor: pointer;
@@ -69,9 +69,7 @@ button:hover {
         padding-top: 10px; /* Espaço menor para o header em dispositivos móveis */
     }
 
-    header {
-        font-size: 24px; /* Diminuir o tamanho do texto do header em dispositivos móveis */
-    }
+
 }
 
 @media (min-width: 769px) and (max-width: 1366px) {
@@ -82,13 +80,10 @@ button:hover {
     }
 
     button {
-        font-size: 30px;
         padding: 30px 40px;
     }
 
-    header {
-        font-size: 32px;
-    }
+
 }
 
 @media (min-width: 1367px) {
@@ -99,11 +94,7 @@ button:hover {
     }
 
     button {
-        font-size: 40px;
         padding: 40px 60px;
     }
 
-    header {
-        font-size: 40px;
-    }
 }

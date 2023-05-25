@@ -1,12 +1,12 @@
 window.onload = function() {
-    var input1 = document.getElementById("pi");
-    var input2 = document.getElementById("pf");
-    var input3 = document.getElementById("lista1");
-    var input4 = document.getElementById("lista2");
-    var input5 = document.getElementById("lista3");
-    var input6 = document.getElementById("lista4");
-    var input7 = document.getElementById("participacao");
-    var resultado = document.getElementById("nota-final");
+    var input1 = document.getElementById("pi_acionas"); 
+    var input2 = document.getElementById("pf_acionas");
+    var input3 = document.getElementById("lista1_acionas");
+    var input4 = document.getElementById("lista2_acionas");
+    var input5 = document.getElementById("lista3_acionas");
+    var input6 = document.getElementById("lista4_acionas");
+    var input7 = document.getElementById("participacao_acionas");
+    var resultado = document.getElementById("nota-final_acionas");
     
     input1.addEventListener("input", calcularResultado);
     input2.addEventListener("input", calcularResultado);
@@ -20,26 +20,26 @@ window.onload = function() {
     initValues();
 
     function initValues() {
-        if(localStorage.getItem('pi')) {
-            input1.value = localStorage.getItem('pi');
+        if(localStorage.getItem('pi_acionas')) {
+            input1.value = localStorage.getItem('pi_acionas');
         }
-        if(localStorage.getItem('pf')) {
-            input2.value = localStorage.getItem('pf');
+        if(localStorage.getItem('pf_acionas')) {
+            input2.value = localStorage.getItem('pf_acionas');
         }
-        if(localStorage.getItem('lista1')) {
-            input3.value = localStorage.getItem('lista1');
+        if(localStorage.getItem('lista1_acionas')) {
+            input3.value = localStorage.getItem('lista1_acionas');
         }
-        if(localStorage.getItem('lista2')) {
-            input4.value = localStorage.getItem('lista2');
+        if(localStorage.getItem('lista2_acionas')) {
+            input4.value = localStorage.getItem('lista2_acionas');
         }
-        if(localStorage.getItem('lista3')) {
-            input5.value = localStorage.getItem('lista3');
+        if(localStorage.getItem('lista3_acionas')) {
+            input5.value = localStorage.getItem('lista3_acionas');
         }
-        if(localStorage.getItem('lista4')) {
-            input6.value = localStorage.getItem('lista4');
+        if(localStorage.getItem('lista4_acionas')) {
+            input6.value = localStorage.getItem('lista4_acionas');
         }
-        if(localStorage.getItem('participacao')) {
-            input7.value = localStorage.getItem('participacao');
+        if(localStorage.getItem('participacao_acionas')) {
+            input7.value = localStorage.getItem('participacao_acionas');
         }
       }
 
@@ -80,13 +80,13 @@ window.onload = function() {
       }
 
     }
-    localStorage.setItem('pi', input1.value);
-    localStorage.setItem('pf', input2.value);
-    localStorage.setItem('lista1', input3.value);
-    localStorage.setItem('lista2', input4.value);
-    localStorage.setItem('lista3', input5.value);
-    localStorage.setItem('lista4', input6.value);
-    localStorage.setItem('participacao', input7.value);
+    localStorage.setItem('pi_acionas', input1.value);
+    localStorage.setItem('pf_acionas', input2.value);
+    localStorage.setItem('lista1_acionas', input3.value);
+    localStorage.setItem('lista2_acionas', input4.value);
+    localStorage.setItem('lista3_acionas', input5.value);
+    localStorage.setItem('lista4_acionas', input6.value);
+    localStorage.setItem('participacao_acionas', input7.value);
 
   }
   calcularResultado();
