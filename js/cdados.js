@@ -1,9 +1,9 @@
 window.onload = function() {
-    var input1 = document.getElementById("pi");
-    var input2 = document.getElementById("pf");
-    var input3 = document.getElementById("lista1");
-    var input4 = document.getElementById("lista2");
-    var resultado = document.getElementById("nota-final");
+    var input1 = document.getElementById("pi_cdados");
+    var input2 = document.getElementById("pf_cdados");
+    var input3 = document.getElementById("lista1_cdados");
+    var input4 = document.getElementById("lista2_cdados");
+    var resultado = document.getElementById("nota-final_cdados");
     
     input1.addEventListener("input", calcularResultado);
     input2.addEventListener("input", calcularResultado);
@@ -13,17 +13,17 @@ window.onload = function() {
     initValues();
 
     function initValues() {
-        if(localStorage.getItem('pi')) {
-            input1.value = localStorage.getItem('pi');
+        if(localStorage.getItem('pi_cdados')) {
+            input1.value = localStorage.getItem('pi_cdados');
         } 
-        if(localStorage.getItem('pf')) {
-            input2.value = localStorage.getItem('pf');
+        if(localStorage.getItem('pf_cdados')) {
+            input2.value = localStorage.getItem('pf_cdados');
         }
-        if(localStorage.getItem('lista1')) {
-            input3.value = localStorage.getItem('lista1');
+        if(localStorage.getItem('lista1_cdados')) {
+            input3.value = localStorage.getItem('lista1_cdados');
         }
-        if(localStorage.getItem('lista2')) {
-            input4.value = localStorage.getItem('lista2');
+        if(localStorage.getItem('lista2_cdados')) {
+            input4.value = localStorage.getItem('lista2_cdados');
         }
       }
 
@@ -64,10 +64,10 @@ window.onload = function() {
 
 
     }
-    localStorage.setItem('pi', input1.value);
-    localStorage.setItem('pf', input2.value);
-    localStorage.setItem('lista1', input3.value);
-    localStorage.setItem('lista2', input4.value);
+    localStorage.setItem('pi_cdados', input1.value);
+    localStorage.setItem('pf_cdados', input2.value);
+    localStorage.setItem('lista1_cdados', input3.value);
+    localStorage.setItem('lista2_cdados', input4.value);
 
   }
   calcularResultado();
