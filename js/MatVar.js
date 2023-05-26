@@ -1,125 +1,34 @@
 window.onload = function() {
-    var input1 = document.getElementById("pi");
-    var input2 = document.getElementById("pf");
-    var input3 = document.getElementById("lista1");
-    var input4 = document.getElementById("lista2");
-    var input6 = document.getElementById("lista4");
-    var resultado = document.getElementById("nota-final");
-    var p = document.getElementById("nota-final");
-    var span = document.getElementById("span");
-    
-    input1.addEventListener("input", calcularResultado);
-    input2.addEventListener("input", calcularResultado);
-    input3.addEventListener("input", calcularResultado);
-    input4.addEventListener("input", calcularResultado);
-    input6.addEventListener("input", calcularResultado);
+  var inputIds = ['ai1', 'pi', 'ai3', 'ai4', 'pf'];
+  var inputs = inputIds.map(id => document.getElementById(id));
+  var resultado = document.getElementById("nota-final");
+  var span = document.getElementById("span");
 
-    initValues();
-
-    function initValues() {
-        if(localStorage.getItem('pi')) {
-            input1.value = localStorage.getItem('pi');
-        } 
-        if(localStorage.getItem('pf')) {
-            input2.value = localStorage.getItem('pf');
-        }
-        if(localStorage.getItem('lista1')) {  
-            input3.value = localStorage.getItem('lista1');
-        }
-        if(localStorage.getItem('lista2')) {  
-            input4.value = localStorage.getItem('lista2');
-        }
-        if(localStorage.getItem('lista4')) {
-            input6.value = localStorage.getItem('lista4');
-        }
+  inputs.forEach(input => {
+      if(localStorage.getItem(input.id)) {
+          input.value = localStorage.getItem(input.id);
       }
-    
-    function calcularResultado() {
+      input.addEventListener("input", calcularResultado);
+  });
 
-
-      input1.addEventListener("input", calcularResultado);
-      input2.addEventListener("input", calcularResultado);
-      input3.addEventListener("input", calcularResultado);
-      input4.addEventListener("input", calcularResultado);
-      input6.addEventListener("input", calcularResultado);
-
-      var A1 = parseFloat(input1.value) || 0;
-      var A2 = parseFloat(input2.value) || 0;
-      var A3 = parseFloat(input3.value) || 0;
-      var A4 = parseFloat(input4.value) || 0;
-      var PF = parseFloat(input6.value) || 0;
+  function calcularResultado() {
+      var A1 = parseFloat(inputs[0].value) || 0;
+      var A2 = parseFloat(inputs[1].value) || 0;
+      var A3 = parseFloat(inputs[2].value) || 0;
+      var A4 = parseFloat(inputs[3].value) || 0;
+      var PF = parseFloat(inputs[4].value) || 0;
 
       var resultadoAtualizado = (A1 * 0.15) + (A2 * 0.30) + (A3 * 0.25) + (A4 * 0.3);
-      
+
+      if (resultadoAtualizado < 6.5 && PF != 0 ) {
+          resultadoAtualizado = (PF * 0.35) + (resultadoAtualizado * 0.65);
+      }
       resultado.innerHTML = resultadoAtualizado.toFixed(2);
-    
-      if (resultadoAtualizado >= 6.5) {
-        span.inertHTML = ""
-        span.innerHTML = "Parabéns! Você foi aprovado!";
-        resultado.classList.remove("verde-claro");
-        resultado.classList.remove("laranja");
-        resultado.classList.add("verde-claro");
-        p.innerHTML = resultadoAtualizado.toFixed(2);
-
-      }
-      else {
-        span.inertHTML = ""
-        span.innerHTML = "Precisa fazer a prova final!";
-        calcularResultado2(resultadoAtualizado);
-        resultadoAtualizado = (PF * 0.35) + (resultadoAtualizado * 0.65);
-      }
-
-      if (resultadoAtualizado < 5 ) {
-        resultado.classList.remove("verde-claro");
-        resultado.classList.remove("laranja");
-        resultado.classList.add("vermelho");
-      }
-      else if (resultadoAtualizado == 5) {
-        resultado.classList.remove("verde-claro");
-        resultado.classList.remove("vermelho");
-        resultado.classList.add("laranja");
-      }
-      else {
-        resultado.classList.remove("vermelho");
-        resultado.classList.remove("laranja");
-        resultado.classList.add("verde-claro");
-
-    }
-
-    localStorage.setItem('pi', input1.value);
-    localStorage.setItem('pf', input2.value);
-    localStorage.setItem('lista1', input3.value);
-    localStorage.setItem('lista2', input4.value);
-    localStorage.setItem('lista4', input6.value);
-
-
-    }
-
-    function calcularResultado2(resultadoAtualizado) {
-
-    var PF = parseFloat(input6.value) || 0;
-
-    if (resultadoAtualizado <= 6.5 && PF != 0 ) {
-      var resultadoAtualizado2 = (PF * 0.35) + (resultadoAtualizado * 0.65);
-      resultado.innerHTML = resultadoAtualizado2.toFixed(2);
-      p.inertHTML = resultadoAtualizado2.toFixed(2);
-    }
-
-
+      span.innerHTML = resultadoAtualizado >= 6.5 ? "Parabéns! Você foi aprovado!" : "Precisa fazer a prova final!";
+      resultado.className = resultadoAtualizado < 5 ? "vermelho" : (resultadoAtualizado == 5 ? "laranja" : "verde-claro");
+      
+      inputIds.forEach(id => localStorage.setItem(id, document.getElementById(id).value));
   }
 
   calcularResultado();
-
-  }
-
-
-
-
-
-
-
-    
-
-
-
-
+}

@@ -34,33 +34,35 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center; /* This centers the children vertically */
+  justify-content: center; /* This centers the children horizontally */
+  position: relative; /* This allows the back button to be positioned relative to the header */
   background-color: var(--primary-color);
   color: white;
   padding: 20px;
   width: 100%;
-  text-align: center;
+  height: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  font-size: 28px;
+  font-size: 40px;
+  text-shadow: black 0.10em 0.1em 0.2em;
+  z-index: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 
 .back-button {
   position: absolute;
-  left: 10px;
-  top: 0%;
-  transform: translateY(-50%);
-  float: left; 
-  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png') 
-  no-repeat center center; 
-  background-size: contain; 
-  width: 50px; 
-  height: 50px; 
-  border: none; 
+  left: 10px; /* ou qualquer outro valor que você deseja para ajustar horizontalmente */
+  top: -20%; /* centraliza o botão verticalmente */
+  transform: translateY(-50%); /* ajusta a posição vertical baseada no próprio tamanho do botão */
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png') no-repeat center center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  border: none;
   cursor: pointer;
   background-color: #f9f9f9;
 }
-
 
 .buttons-container {
   display: flex;
