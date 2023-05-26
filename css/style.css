@@ -1,14 +1,17 @@
+/* Definição das cores personalizadas */
 :root {
-    --primary-color: #d62d20;
-    --secondary-color: #000000;
+    --primary-color: #d62d20; /* Cor primária */
+    --secondary-color: #000000; /* Cor secundária */
 }
 
+/* Estilos básicos para o HTML e o body */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
+/* Estilos para o body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
@@ -19,8 +22,9 @@ body {
     padding-top: 80px; /* Espaço para o header */
 }
 
+/* Estilos para o header */
 header {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Cor de fundo usando a cor primária */
     color: white;
     padding: 20px;
     text-align: center;
@@ -34,6 +38,7 @@ header {
     z-index: 1; /* Garante que o header fique acima de outros conteúdos */
 }
 
+/* Estilos para o container dos botões */
 .buttons-container {
     display: flex;
     flex-direction: column;
@@ -44,9 +49,10 @@ header {
     transition: all 0.3s ease;
 }
 
+/* Estilos para os botões */
 button {
     padding: 20px 30px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Cor de fundo usando a cor primária */
     color: white;
     border: 1px solid black;
     border-radius: 30px;
@@ -58,43 +64,41 @@ button {
     width: 90%;
 }
 
+/* Estilos para o hover nos botões */
 button:hover {
     background-color: white;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Cor do texto usando a cor primária */
     transform: translate(0, -5px);
 }
 
+/* Media query para dispositivos com largura máxima de 768px */
 @media screen and (max-width: 768px) {
     body {
         padding-top: 10px; /* Espaço menor para o header em dispositivos móveis */
     }
-
-
 }
 
+/* Media query para dispositivos com largura entre 769px e 1366px */
 @media (min-width: 769px) and (max-width: 1366px) {
     .buttons-container {
-        padding-bottom: 50%;
-        flex-direction: row;
-        flex-wrap: wrap;
+        padding-bottom: 50%; /* Espaçamento inferior menor */
+        flex-direction: row; /* Altera a direção dos botões para horizontal */
+        flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
     }
 
     button {
-        padding: 30px 40px;
+        padding: 30px 40px; /* Espaçamento interno menor nos botões */
     }
-
-
 }
 
+/* Media query para dispositivos com largura mínima de 1367px */
 @media (min-width: 1367px) {
     .buttons-container {
-        
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: row; /* Altera a direção dos botões para horizontal */
+        flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
     }
 
     button {
-        padding: 40px 60px;
+        padding: 40px 60px; /* Espaçamento interno maior nos botões */
     }
-
 }
