@@ -1,10 +1,15 @@
 :root {
   --primary-color: #d62d20;
-  --secondary-color: #000000;
+  --secondary-color: #333;
+  --highlight-color: #f9f9f9;
+  --border-color: #707070;
+  --hover-background-color: #f1f1f1;
+  --trans-time: 0.3s;
+  --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-stack);
   margin: 0;
   padding: 0;
   background-color: white;
@@ -12,43 +17,46 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: background-color var(--trans-time) ease;
 }
 
 header {
   display: flex;
-  align-items: center; /* This centers the children vertically */
-  justify-content: center; /* This centers the children horizontally */
-  position: relative; /* This allows the back button to be positioned relative to the header */
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
   background-color: var(--primary-color);
-  color: white;
+  color: var(--highlight-color);
   padding: 20px;
   width: 100%;
   height: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   font-size: 40px;
-  text-shadow: black 0.10em 0.1em 0.2em;
+  text-shadow: black 0.1em 0.1em 0.2em;
   z-index: 1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-stack);
 }
 
 .back-button {
   position: absolute;
-  left: 10px; /* ou qualquer outro valor que você deseja para ajustar horizontalmente */
-  top: -20%; /* centraliza o botão verticalmente */
-  transform: translateY(-50%); /* ajusta a posição vertical baseada no próprio tamanho do botão */
+  left: 10px; 
+  top: -20%; 
+  transform: translateY(-50%); 
   background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png') no-repeat center center;
   background-size: contain;
   width: 50px;
   height: 50px;
   border: none;
   cursor: pointer;
-  background-color: #f9f9f9;
+  background-color: var(--highlight-color);
+  transition: background-color var(--trans-time) ease;
 }
 
+.back-button:hover {
+  background-color: var(--hover-background-color);
+}
 
-
-
-.buttons-container {
+.buttons-container, form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +64,11 @@ header {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  transition: transform var(--trans-time) ease;
+}
+
+.buttons-container:hover, form:hover {
+  transform: scale(1.02);
 }
 
 button {
@@ -69,7 +82,7 @@ button {
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--trans-time) ease;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   margin-top: 100px;
 }
@@ -109,7 +122,7 @@ button:hover {
 span {
   display: block;
   font-size: 30px;
-  margin-left: 20px; /* adiciona a margem esquerda */
+  margin-left: 20px;
   font-family: bold;
 }
 
@@ -152,20 +165,20 @@ span {
 input[type="number"] {
   margin: 20px;
   padding: 50px;
-  background-color: #f9f9f9;
-  border: 2px solid #707070;
+  background-color: var(--highlight-color);
+  border: 2px solid var(--border-color);
   border-radius: 5px;
   font-size: 50px;
   font-weight: 700;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--trans-time) ease;
   width: 60%;
   max-width: 400px;
 }
 
 input[type="number"]:hover,
 input[type="number"]:focus {
-  background-color: #f1f1f1;
+  background-color: var(--hover-background-color);
   outline: none;
   border-color: var(--primary-color);
 }
@@ -195,24 +208,20 @@ form label {
 form input[type="number"] {
   margin: 10px 0;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--highlight-color);
   border-radius: 5px;
   font-size: 50px;
 }
-
-/* Modificações para o iPhone 12 Pro */
 
 @media only screen 
 and (device-width: 428px) 
 and (device-height: 926px) 
 and (-webkit-device-pixel-ratio: 3) { 
-/* Ajuste o tamanho do header */
 header {
   font-size: 50px;
   padding: 15px;
 }
 
-/* Ajuste o tamanho dos botões */
 .buttons-container {
   padding: 10px;
 }
@@ -224,7 +233,6 @@ button {
   max-width: 350px;
 }
 
-/* Ajuste o tamanho do formulário */
 form {
   margin-top: 30px;
   max-width: 350px;
@@ -232,12 +240,12 @@ form {
 
 form label {
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: 30px;
 }
 
 form input[type="number"] {
   margin: 5px 0;
   padding: 10px;
-  font-size: 20px;
+  font-size: 30px;
 }
 }
