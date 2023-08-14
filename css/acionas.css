@@ -248,4 +248,12 @@ form input[type="number"] {
   padding: 10px;
   font-size: 30px;
 }
+
+.Participação{
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+
 }

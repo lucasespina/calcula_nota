@@ -9,7 +9,7 @@ window.onload = function() {
 
   function calcularResultado() {
     const valores = Array.from(inputs).map(input => parseFloat(input.value) || 0);
-    const resultadoAtualizado = (valores[0] * 0.475) + (valores[1] * 0.475) + ((((valores[2]) + (valores[3]) + (valores[4]) + (valores[5]))/4)*0.05) + (valores[6] * 0.05);
+    const resultadoAtualizado = ((valores[0] * 0.4) + (valores[1] * 0.6))*0.9 + ((((valores[2]) + (valores[3]) + (valores[4]) + (valores[5]))/4)*0.10) + (valores[6] * 0.05);
 
     // Limita o valor máximo do resultado em 10
     const resultadoFinal = Math.min(resultadoAtualizado, 10);
