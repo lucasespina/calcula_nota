@@ -15,6 +15,7 @@ window.onload = function() {
   initValues();
 
   function initValues() {
+    
       if(localStorage.getItem('quiz1_cdados')) {
           input1.value = localStorage.getItem('quiz1_cdados');
       } 
@@ -22,7 +23,7 @@ window.onload = function() {
           input2.value = localStorage.getItem('quiz2_cdados');
       }
       if(localStorage.getItem('pi_cdados')) {
-        input2.value = localStorage.getItem('pi_cdados');
+        input3.value = localStorage.getItem('pi_cdados');
       }
 
       if(localStorage.getItem('quiz3_cdados')) {
@@ -30,7 +31,7 @@ window.onload = function() {
       }
 
       if(localStorage.getItem('pf_cdados')) {
-          input4.value = localStorage.getItem('pf_cdados');
+          input5.value = localStorage.getItem('pf_cdados');
       }
 
   }
