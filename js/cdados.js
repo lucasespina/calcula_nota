@@ -1,14 +1,16 @@
 window.onload = function() {
   var input1 = document.getElementById("quiz1_cdados");
-  var input2 = document.getElementById("pi_cdados");
-  var input3 = document.getElementById("quiz2_cdados");
-  var input4 = document.getElementById("pf_cdados");
+  var input2 = document.getElementById("quiz2_cdados");
+  var input3 = document.getElementById("pi_cdados");
+  var input4 = document.getElementById("quiz3_cdados");
+  var input5 = document.getElementById("pf_cdados");
   var resultado = document.getElementById("nota-final_cdados");
   
   input1.addEventListener("input", calcularResultado);
   input2.addEventListener("input", calcularResultado);
   input3.addEventListener("input", calcularResultado);
   input4.addEventListener("input", calcularResultado);
+  input5.addEventListener("input", calcularResultado);
 
   initValues();
 
@@ -16,15 +18,21 @@ window.onload = function() {
       if(localStorage.getItem('quiz1_cdados')) {
           input1.value = localStorage.getItem('quiz1_cdados');
       } 
-      if(localStorage.getItem('pi_cdados')) {
-          input2.value = localStorage.getItem('pi_cdados');
-      }
       if(localStorage.getItem('quiz2_cdados')) {
-          input3.value = localStorage.getItem('quiz2_cdados');
+          input2.value = localStorage.getItem('quiz2_cdados');
       }
+      if(localStorage.getItem('pi_cdados')) {
+        input2.value = localStorage.getItem('pi_cdados');
+      }
+
+      if(localStorage.getItem('quiz3_cdados')) {
+        input4.value = localStorage.getItem('quiz3_cdados');
+      }
+
       if(localStorage.getItem('pf_cdados')) {
           input4.value = localStorage.getItem('pf_cdados');
       }
+
   }
 
   
@@ -33,8 +41,9 @@ window.onload = function() {
       var valor2 = parseFloat(input2.value) || 0;
       var valor3 = parseFloat(input3.value) || 0;
       var valor4 = parseFloat(input4.value) || 0;
+      var valor5 = parseFloat(input5.value) || 0;
     
-      var resultadoAtualizado = (valor1 * 0.05) + (valor2 * 0.35) + (valor3 * 0.05) + (valor4 * 0.55);
+      var resultadoAtualizado = (valor1 * 0.03333) + (valor2 * 0.03333) + (valor3 * 0.35) + (valor4 * 0.03333) + (valor5 * 0.55);
     
       resultado.innerHTML = resultadoAtualizado.toFixed(2);
   
@@ -53,9 +62,10 @@ window.onload = function() {
       }
 
       localStorage.setItem('quiz1_cdados', input1.value);
-      localStorage.setItem('pi_cdados', input2.value);
-      localStorage.setItem('quiz2_cdados', input3.value);
-      localStorage.setItem('pf_cdados', input4.value);
+      localStorage.setItem('quiz2_cdados', input2.value);
+      localStorage.setItem('pi_cdados', input3.value);
+      localStorage.setItem('quiz3_cdados', input4.value);
+      localStorage.setItem('pf_cdados', input5.value);
   }
   
   calcularResultado();
