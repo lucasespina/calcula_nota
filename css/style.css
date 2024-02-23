@@ -102,3 +102,17 @@ button:hover {
         padding: 40px 60px; /* Espaçamento interno maior nos botões */
     }
 }
+
+.back-button {
+    position: absolute;
+    left: 10px; /* ou qualquer outro valor que você deseja para ajustar horizontalmente */
+    top: 50%; /* centraliza o botão verticalmente */
+    transform: translateY(-50%); /* ajusta a posição vertical baseada no próprio tamanho do botão */
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-back-512.png') no-repeat center center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
