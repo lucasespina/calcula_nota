@@ -18,7 +18,7 @@ window.onload = function() {
       var A4 = parseFloat(inputs[3].value) || 0;
       var PF = parseFloat(inputs[4].value) || 0;
 
-      var resultadoAtualizado = (A1 * 0.15) + (A2 * 0.30) + (A3 * 0.25) + (A4 * 0.3);
+      var resultadoAtualizado = (A1 * 0.20) + (A2 * 0.25) + (A3 * 0.25) + (A4 * 0.3);
 
       if (resultadoAtualizado < 6.5 && PF != 0 ) {
           resultadoAtualizado = (PF * 0.35) + (resultadoAtualizado * 0.65);
