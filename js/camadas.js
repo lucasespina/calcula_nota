@@ -16,7 +16,8 @@ window.onload = function () {
         'quiz3_camadas',
         'quiz4_camadas',
         'quiz5_camadas',
-        'quiz6_camadas'
+        'quiz6_camadas',
+        'quiz7_camadas'
     ];
 
     var inputs = inputIds.map(id => document.getElementById(id)).filter(input => input !== null);
@@ -61,7 +62,8 @@ window.onload = function () {
             parseFloat(document.getElementById('quiz3_camadas').value) || 0,
             parseFloat(document.getElementById('quiz4_camadas').value) || 0,
             parseFloat(document.getElementById('quiz5_camadas').value) || 0,
-            parseFloat(document.getElementById('quiz6_camadas').value) || 0
+            parseFloat(document.getElementById('quiz6_camadas').value) || 0,
+            parseFloat(document.getElementById('quiz7_camadas').value) || 0
         ];
 
         // Calcular média dos quizzes
