@@ -37,7 +37,7 @@ window.onload = function () {
         var AF = parseFloat(document.getElementById('af_camadas').value) || 0;
 
         // Calcular média das avaliações
-        var mediaAvaliacoes = (0.60 * AF);
+        var mediaAvaliacoes = AF;
 
         // Obter notas dos projetos
         var projetoScores = [
