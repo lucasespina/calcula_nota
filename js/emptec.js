@@ -1,5 +1,5 @@
 window.onload = function() {
-    var inputIds = ['projeto_1_emptec', 'projeto_2_emptec', 'prova_1_emptec', 'prova_2_emptec', 'CI1', 'CI2', 'CI3', 'CI4', 'CI5', 'CI6'];
+    var inputIds = ['projeto_1_emptec', 'projeto_2_emptec', 'prova_1_emptec', 'prova_2_emptec', 'CI1', 'CI2', 'CI3', 'CI4', 'CI5', ];
     var inputs = inputIds.map(id => document.getElementById(id));
     var resultado_final = document.getElementById("nota-final");
     var span = document.getElementById("span");
@@ -22,10 +22,10 @@ window.onload = function() {
   
         // Notas das contribuições individuais
         var CI_total = 0;
-        for (let i = 4; i <= 9; i++) {
+        for (let i = 4; i <= 8; i++) {
             CI_total += parseFloat(inputs[i].value) || 0;
         }
-        var CI_media = CI_total / 6;
+        var CI_media = CI_total / 5;
   
         // Cálculo das notas finais com os pesos definidos
         var notaProjetos = (P1 * 0.25) + (P2 * 0.30);
