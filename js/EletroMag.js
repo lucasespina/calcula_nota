@@ -1,5 +1,5 @@
 window.onload = function() {
-    var inputIds = ['q1_eletromag', 'pi_eletromag', 'pj_eletromag', 'pf_eletromag']
+    var inputIds = ['q1_eletromag', 'pi_eletromag', 'q2_eletromag', 'pf_eletromag']
     var inputs = inputIds.map(id => document.getElementById(id));
     var resultado_eletromag = document.getElementById("nota-final_eletromag");
   
@@ -13,10 +13,10 @@ window.onload = function() {
     function calcularResultado() {
         var Q1  = parseFloat(inputs[0].value) || 0;
         var PI = parseFloat(inputs[1].value) || 0;
-        var PJ = parseFloat(inputs[2].value) || 0;
+        var Q2 = parseFloat(inputs[2].value) || 0;
         var PF = parseFloat(inputs[3].value) || 0;
   
-        var resultadoAtualizado = (Q1 * 0.15) + (PI * 0.35) + (PJ * 0.15) + (PF * 0.35);
+        var resultadoAtualizado = (Q1 * 0.20) + (PI * 0.30) + (Q2 * 0.20) + (PF * 0.30);
   
 
         resultado_eletromag.innerHTML = resultadoAtualizado.toFixed(2);
